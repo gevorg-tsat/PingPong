@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define POCK1 6
 #define POCK2 75
-#define ROOF 27
+#define ROOF 25
 #define FLOOR 1
 
 void movement(int *ball_x, int *ball_y, int rocket1, int rocket2, int *ball_speedx, int *ball_speedy, int *score_left, int *score_right) {
