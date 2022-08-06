@@ -6,8 +6,8 @@ int main() {
     char button = ' ';
     int ball_x = 40, ball_y = 10, rocket1 = 10, rocket2 = 10, ball_speedx = 1, ball_speedy = 1, score_left = 0, score_right = 0;
     while (button != '/') {
-        printf("\e[8;$27;$80;t");
-        print(ball_x, ball_y, rocket1, rocket2);
+        printf("\e[8;$35;$82;t");
+        print(ball_x, ball_y, rocket1, rocket2, score_left / 10, score_left % 10, score_right / 10, score_right % 10);
         button = getchar();
         if ((button == 'A' || button == 'a') && rocket1 != 3) {
             rocket1--;
@@ -20,6 +20,6 @@ int main() {
             rocket2++;
         
         movement(&ball_x, &ball_y, rocket1, rocket2, &ball_speedx, &ball_speedy, &score_left, &score_right);
-        print(ball_x, ball_y, rocket1, rocket2);
+        print(ball_x, ball_y, rocket1, rocket2, score_left / 10, score_left % 10, score_right / 10, score_right % 10);
     }
 }
