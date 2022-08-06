@@ -5,7 +5,7 @@
 #define FIELD_SIZE_Y 27  // Размер поля по вертикали 25 + 2 стенки
 #define SCORE_SIZE_X 22  // Размер счета по горизонтали 22 + 2 стенки
 #define SCORE_SIZE_Y 12  // Размер счета по вертикали 12 + 2 стенки
-#define RACKET_LEFT_X 2  // Положение по Х ЛЕВОЙ ракетки
+#define RACKET_LEFT_X 6  // Положение по Х ЛЕВОЙ ракетки
 #define RACKET_RIGHT_X 75  // Положение по Х ПРАВОЙ ракетки
 
 int print(int ball_x, int ball_y, int racket_left_y, int racket_right_y) {
@@ -19,7 +19,7 @@ int print(int ball_x, int ball_y, int racket_left_y, int racket_right_y) {
 
   for (int field_y = 1; field_y <= FIELD_SIZE_Y; field_y++) {  // Цикл по оси Y
     for (int field_x = 1; field_x <= FIELD_SIZE_X; field_x++) {  // Цикл по оси Х
-      (ball_x == field_x && ball_y == field_y) ?   printf("%ls", L"\xE2\x93\x82") : // Положение мяча
+      (ball_x == field_x && ball_y == field_y) ?   printf("%ls", L"@") : // Положение мяча
       (field_x == 1 && field_y == 1) ||  // Верхний левый угол
       (field_x == FIELD_SIZE_X && field_y == 1) ||  // Верхний правый угол\xe2\x99\xa7
       (field_x == 1 && field_y == FIELD_SIZE_Y) ||  // Нижний левый угол

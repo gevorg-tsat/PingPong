@@ -1,6 +1,6 @@
 #include <stdio.h>
-#define POCK1 20
-#define POCK2 60
+#define POCK1 6
+#define POCK2 75
 #define ROOF 27
 #define FLOOR 1
 
@@ -41,11 +41,4 @@ void movement(int *ball_x, int *ball_y, int rocket1, int rocket2, int *ball_spee
         *ball_y += (*ball_speedy);
         return;
     }
-}
-
-int main() {
-    int ball_x = 59, ball_y = 17, rocket1 = 18, rocket2 = 18, ball_speedx = 1, ball_speedy = 1, score_left = 0, score_right = 0;
-    movement(&ball_x, &ball_y, rocket1, rocket2, &ball_speedx, &ball_speedy, &score_left, &score_right);
-    printf("%d %d %d %d %d %d %d %d", ball_x, ball_y, rocket1, rocket2,  ball_speedx, ball_speedy, score_left, score_right);
-    return 0;
 }
