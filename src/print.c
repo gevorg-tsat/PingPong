@@ -1,12 +1,13 @@
 // "Copyright [2022] <Copyright Desperos>"
 #include <stdio.h>
-#include <stdlib.h>
-#define FIELD_SIZE_X 82  // Размер поля по горизонтали 80 + 2 стенки
-#define FIELD_SIZE_Y 27  // Размер поля по вертикали 25 + 2 стенки
+#define FIELD_SIZE_X 80  // Размер поля по горизонтали 80 + 2 стенки
+#define FIELD_SIZE_Y 25  // Размер поля по вертикали 25 + 2 стенки
 #define RACKET_LEFT_X 2  // Положение по Х ЛЕВОЙ ракетки
 #define RACKET_RIGHT_X 75  // Положение по Х ПРАВОЙ ракетки
 #define SCORE_LEFT 17  // Крайнее левое положение счета
 #define SCORE_INT 2  // Интервал между цифрами
+
+int score(int cifra);
 
 int print(int ball_x, int ball_y, int racket_left_y, int racket_right_y, int score_1, int score_2, int score_3, int score_4) {
   score_1 = (score_1 == 0) ? 11 : score_1;
@@ -28,6 +29,7 @@ int print(int ball_x, int ball_y, int racket_left_y, int racket_right_y, int sco
   for (int field_y = 1; field_y <= FIELD_SIZE_Y; field_y++) {  // Цикл по оси Y
     for (int field_x = 1; field_x <= FIELD_SIZE_X; field_x++) {  // Цикл по оси Х
       (ball_x == field_x && ball_y == field_y) ?   printf("@") : // Положение мяча
+
       (field_x == 1 && field_y == 1) ||  // Верхний левый угол
       (field_x == FIELD_SIZE_X && field_y == 1) ||  // Верхний правый угол\xe2\x99\xa7
       (field_x == 1 && field_y == FIELD_SIZE_Y) ||  // Нижний левый угол
@@ -157,7 +159,7 @@ int score(int cifra) {
     printf("|   |");
     break;
   case 65:
-    printf("|---|n");
+    printf("|---|\n");
     break;
   case 71:
     printf("|---|");
