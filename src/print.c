@@ -2,7 +2,7 @@
 #include <stdio.h>
 #define FIELD_SIZE_X 80  // Размер поля по горизонтали 80 + 2 стенки
 #define FIELD_SIZE_Y 25  // Размер поля по вертикали 25 + 2 стенки
-#define RACKET_LEFT_X 2  // Положение по Х ЛЕВОЙ ракетки
+#define RACKET_LEFT_X 5  // Положение по Х ЛЕВОЙ ракетки
 #define RACKET_RIGHT_X 75  // Положение по Х ПРАВОЙ ракетки
 #define SCORE_INT_1 2  // Интервал внутренних цифр счета
 #define SCORE_INT_2 4  // Интервал внешних цифр счета
