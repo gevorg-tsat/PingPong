@@ -1,29 +1,7 @@
 // "Copyright [2022] <Copyright Desperos>"
 #include <stdio.h>
-#include <stdlib.h>
-#define FIELD_SIZE_X 82  // Размер поля по горизонтали 80 + 2 стенки
-#define FIELD_SIZE_Y 27  // Размер поля по вертикали 25 + 2 стенки
-//#define SCORE_SIZE_X = FIELD_SIZE_X - 20  // Размер счета по горизонтали 22 + 2 стенки
-#define RACKET_LEFT_X 2  // Положение по Х ЛЕВОЙ ракетки
-#define RACKET_RIGHT_X 75  // Положение по Х ПРАВОЙ ракетки
-#define SCORE_LEFT 17  // Крайнее левое положение счета
-#define SCORE_INT 2  // Интервал между цифрами
 
-int print(int ball_x, int ball_y, int racket_left_y, int racket_right_y, int score_1, int score_2, int score_3, int score_4);
-int score(int cifra);
-
-int main() {
-  printf ("\033[0d\033[2J");
-  printf ("\e[8;$35;$82;t");
-  printf("\n");
-  print(3, 2, 3, 10, 0, 0, 0 ,0); // ХУ Ball, XY racket L, XY racket R
-
-
-return 0;
-}
-
-
-int print(int ball_x, int ball_y, int racket_left_y, int racket_right_y, int score_1, int score_2, int score_3, int score_4) {
+int win(int win, int racket_left_y, int racket_right_y, int score_1, int score_2, int score_3, int score_4) {
   score_1 = (score_1 == 0) ? 11 : score_1;
   score_2 = (score_2 == 0) ? 11 : score_2;
   score_3 = (score_3 == 0) ? 11 : score_3;
@@ -39,10 +17,28 @@ int print(int ball_x, int ball_y, int racket_left_y, int racket_right_y, int sco
     }
     printf("\n");
   }
-  printf("\n");
+  switch (win) {
+  case 0:
+    printf("\n");
+    for (int x = 1; x < FIELD_SIZE_X / 2 - 8; x++) {
+      printf(" ");
+    }
+    printf("Player LEFT WIN!\n");
+    break;
+  case 1:
+    printf("\n");
+    for (int x = 1; x < FIELD_SIZE_X / 2 - 8; x++) {
+      printf(" ");
+    }
+    printf("Player RIGHT WIN\n"); 
+    break;
+  default:
+    printf("\n");
+    break;
+  }   
+
   for (int field_y = 1; field_y <= FIELD_SIZE_Y; field_y++) {  // Цикл по оси Y
     for (int field_x = 1; field_x <= FIELD_SIZE_X; field_x++) {  // Цикл по оси Х
-      (ball_x == field_x && ball_y == field_y) ?   printf("@") : // Положение мяча
       (field_x == 1 && field_y == 1) ||  // Верхний левый угол
       (field_x == FIELD_SIZE_X && field_y == 1) ||  // Верхний правый угол\xe2\x99\xa7
       (field_x == 1 && field_y == FIELD_SIZE_Y) ||  // Нижний левый угол

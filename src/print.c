@@ -1,6 +1,5 @@
 // "Copyright [2022] <Copyright Desperos>"
 #include <stdio.h>
-#include <stdlib.h>
 #define FIELD_SIZE_X 82  // Размер поля по горизонтали 80 + 2 стенки
 #define FIELD_SIZE_Y 27  // Размер поля по вертикали 25 + 2 стенки
 #define RACKET_LEFT_X 2  // Положение по Х ЛЕВОЙ ракетки
